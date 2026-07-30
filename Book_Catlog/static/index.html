@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Catalog</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; }
+      form { display: grid; gap: 0.5rem; max-width: 320px; margin-bottom: 1rem; }
+      table { border-collapse: collapse; width: 100%; }
+      th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+      button { cursor: pointer; }
+      .actions button { margin-right: 0.25rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Book Catalog</h1>
+    <form id="book-form">
+      <input id="book-id" type="hidden" />
+      <label>Title <input id="title" required /></label>
+      <label>Author <input id="author" required /></label>
+      <label>Genre <input id="genre" /></label>
+      <label>Status
+        <select id="status">
+          <option value="available">available</option>
+          <option value="borrowed">borrowed</option>
+        </select>
+      </label>
+      <button type="submit">Add Book</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Genre</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="books-body"></tbody>
+    </table>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
